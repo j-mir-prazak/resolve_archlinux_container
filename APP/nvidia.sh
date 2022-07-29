@@ -6,13 +6,12 @@ pacman -Syyu --noconfirm fuse3
 
 modprobe fuse
 
-cd /home/arch
+cd /home/$HOSTUSER
 
 sudo -u $HOSTUSER yay --noconfirm -S opencl-nvidia --overwrite '*'
 
 curl https://us.download.nvidia.com/XFree86/Linux-${ARCH}/${NVIDIA_VERSION}/NVIDIA-Linux-${ARCH}-${NVIDIA_VERSION}.run --output nvidia.run
 chmod +x ./nvidia.run
-
 
 bash ./nvidia.run --no-kernel-module --no-kernel-module-source --run-nvidia-xconfig --no-backup --no-questions --accept-license --ui=none
 

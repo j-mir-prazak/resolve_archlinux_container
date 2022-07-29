@@ -2,7 +2,6 @@
 
 docker run \
     --network host \
-    --cap-add=ALL \
     --privileged \
     --mount type=bind,source=/lib/modules,target=/lib/modules \
     --mount type=bind,source=/dev,target=/dev \
@@ -17,6 +16,6 @@ docker run \
     --env PULSE_SERVER=/var/run/user/$(id -u)/pulse/native \
     --name=archresolve \
     --rm \
-    -t \
-archresolve:latest sudo -u $USER PULSE_SERVER=/var/run/user/$(id -u)/pulse/native /opt/resolve/bin/resolve
+    -ti \
+archresolve:latest /bin/bash
 #archresolve:latest sudo -u $USER PULSE_SERVER=/var/run/user/$(id -u)/pulse/native /opt/resolve/bin/resolve
