@@ -17,5 +17,5 @@ docker run \
     --name=archresolve \
     --rm \
     -ti \
-archresolve:latest /bin/bash
+archresolve:latest /app/resolve.sh
 #archresolve:latest sudo -u $USER PULSE_SERVER=/var/run/user/$(id -u)/pulse/native /opt/resolve/bin/resolve

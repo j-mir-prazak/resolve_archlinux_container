@@ -15,7 +15,7 @@ chmod +x ./nvidia.run
 
 bash ./nvidia.run --no-kernel-module --no-kernel-module-source --run-nvidia-xconfig --no-backup --no-questions --accept-license --ui=none
 
-sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve --overwrite '*'
+sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve-studio --overwrite '*'
 
 
 
