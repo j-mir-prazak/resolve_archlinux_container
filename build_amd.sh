@@ -23,6 +23,8 @@ docker run \
     --mount type=bind,source=$(pwd)/build/,target=/tmp/build \
     --env DISPLAY=$DISPLAY \
     --env ARCH="$(arch)" \
+    --env HOSTUSER=$HOSTUSER \
+    --env HOSTUSERID=$HOSTUSERID \
     --name=archresolve-build \
     -dit \
 archresolve-build /bin/bash
