@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "DOCKER INSIDE."
+echo "DOCKER PREP."
 
 echo $HOSTUSER
 echo $HOSTUSERID
@@ -25,9 +25,5 @@ echo "%wheel ALL=NOPASSWD: ALL" | tee -a /etc/sudoers
 echo -e "\n[multilib]\nInclude = /etc/pacman.d/mirrorlist\n" | sudo tee -a /etc/pacman.conf
 pacman -Syyu --noconfirm
 
-cd /home/$HOSTUSER
-pwd
-sudo -u $HOSTUSER git clone https://aur.archlinux.org/yay.git
-cd yay
-sudo -u $HOSTUSER makepkg --noconfirm -si 
+
 

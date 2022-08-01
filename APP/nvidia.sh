@@ -7,6 +7,8 @@ pacman -Syyu --noconfirm fuse3
 modprobe fuse
 
 cd /home/$HOSTUSER
+#sudo -u $HOSTUSER mkdir -p /home/$HOSTUSER/yay
+#cd /home/$HOSTUSER/yay
 
 sudo -u $HOSTUSER yay --noconfirm -S opencl-nvidia --overwrite '*'
 
@@ -17,6 +19,7 @@ bash ./nvidia.run --no-kernel-module --no-kernel-module-source --run-nvidia-xcon
 
 sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve-studio --overwrite '*'
 
+rm /home/$HOSTUSER/* -rf
 
 
 #sudo -u arch yay --noconfirm -S davinci-resolve

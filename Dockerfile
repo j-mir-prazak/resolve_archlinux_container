@@ -8,4 +8,4 @@ ARG HOSTUSERID
 ENV HOSTUSER=$HOSTUSER
 ENV HOSTUSERID=$HOSTUSERID
 
-RUN bash /app/pre.sh
+RUN bash /app/prep.sh
