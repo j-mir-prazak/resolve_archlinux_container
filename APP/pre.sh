@@ -14,7 +14,7 @@ chown -R $HOSTUSER:$HOSTUSER /home/$HOSTUSER
 usermod -u $HOSTUSERID $HOSTUSER
 
 pacman -Sy --noconfirm sudo
-pacman -Sy --needed --noconfirm git base-devel sudo vim nano go core/usbutils bash-completion pulseaudio-alsa
+pacman -Sy --needed --noconfirm git base-devel sudo vim nano go core/usbutils bash-completion pulseaudio-alsa gnupg
 
 usermod -aG wheel root
 usermod -aG wheel $HOSTUSER

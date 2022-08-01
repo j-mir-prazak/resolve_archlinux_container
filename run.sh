@@ -12,6 +12,7 @@ docker run \
     --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
     --mount type=bind,source=/media,target=/media \
     --mount type=bind,source=/home,target=/home \
+    --mount type=bind,source=/opt/resolve,target=/opt/resolve_host \
     --mount type=bind,source=$(pwd)/APP,target=/app,readonly \
     --env DISPLAY=$DISPLAY \
     --env HOSTUSER=$USER \
