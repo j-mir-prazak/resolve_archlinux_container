@@ -15,6 +15,7 @@ docker run \
     --mount type=bind,source=/opt/resolve,target=/opt/resolve_host \
     --mount type=bind,source=$(pwd)/APP,target=/app,readonly \
     --mount type=bind,source=/etc/machine-id,target=/etc/machine-id \
+    --mount type=bind,source=$(pwd)/resolve,target=/opt/resolve \
     --env DISPLAY=$DISPLAY \
     --env HOSTUSER=$USER \
     --env HOSTUSERID=$(id -u) \
