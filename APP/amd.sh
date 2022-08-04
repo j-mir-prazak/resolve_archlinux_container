@@ -52,7 +52,7 @@ if [ ! -f /tmp/build/davinci-resolve/*zst ]; then
     sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve-studio --overwrite '*' --builddir=/tmp/build/
 else
     cd /tmp/build/davinci-resolve-studio/
-    sudu -u $HOSTUSER makepkg -sU
+    sudo -u $HOSTUSER makepkg -sU
     pacman -U *zst --noconfirm --overwrite '*'
 fi
 
