@@ -1,5 +1,7 @@
 #!/bin/bash
 
+cp /app/tracefile /usr/local/bin/
+chmod +x /usr/local/bin/tracefile
 
 useradd $HOSTUSER
 usermod -u $HOSTUSERID $HOSTUSER

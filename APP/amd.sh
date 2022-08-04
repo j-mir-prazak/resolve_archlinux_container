@@ -36,10 +36,23 @@ else
     pacman -U *zst --noconfirm --overwrite '*'
 fi
 
+# cd /tmp/build/
+# sudo -u $HOSTUSER mkdir -p /tmp/build/davinci-resolve-studio/
+# if [ ! -f /tmp/build/davinci-resolve/*zst ]; then
+#     sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve --overwrite '*' --builddir=/tmp/build/
+# else
+#     cd /tmp/build/davinci-resolve/
+#     sudu -u $HOSTUSER makepkg -sU
+#     pacman -U *zst --noconfirm --overwrite '*'
+# fi
+
+cd /tmp/build/
+sudo -u $HOSTUSER mkdir -p /tmp/build/davinci-resolve-studio/
 if [ ! -f /tmp/build/davinci-resolve/*zst ]; then
-    sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve --overwrite '*' --builddir=/tmp/build/
+    sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve-studio --overwrite '*' --builddir=/tmp/build/
 else
-    cd /tmp/build/davinci-resolve/
+    cd /tmp/build/davinci-resolve-studio/
+    sudu -u $HOSTUSER makepkg -sU
     pacman -U *zst --noconfirm --overwrite '*'
 fi
 

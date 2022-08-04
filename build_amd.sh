@@ -6,6 +6,9 @@ mkdir -p $(pwd)/build
 mkdir -p $(pwd)/resolve
 mkdir -p $(pwd)/resolve_studio
 
+cp /etc/hostid $(pwd)/private/hostid
+cp /etc/machine-id $(pwd)/private/machine-id
+
 HOSTUSER=$USER
 HOSTUSERID=$(id -u)
 
