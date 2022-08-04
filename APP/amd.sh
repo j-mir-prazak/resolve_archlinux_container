@@ -2,7 +2,7 @@
 
 echo "INSTALLING AMD AND DAVINCI RESOLVE"
 
-pacman -Syyu --noconfirm fuse3 mesa glu librsvg libxcrypt-compat
+pacman -Syyu --noconfirm fuse3 mesa glu librsvg libxcrypt-compat 'gstreamer' 'libpng12' 'lib32-libpng12' 'ocl-icd' 'openssl-1.0' 'opencl-driver' 'qt5-base' 'qt5-svg' 'qt5-webkit' 'qt5-webengine' 'qt5-websockets' 'libxcrypt-compat' 'strace'
 
 modprobe fuse
 
