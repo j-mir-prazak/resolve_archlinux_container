@@ -32,31 +32,32 @@ fi
 cd /tmp/build/
 sudo -u $HOSTUSER mkdir -p /tmp/build/nvidia-drivers/
 if [ ! -f /tmp/build/nvidia-drivers/*run ]; then
-    curl https://us.download.nvidia.com/XFree86/Linux-${ARCH}/${NVIDIA_VERSION}/NVIDIA-Linux-${ARCH}-${NVIDIA_VERSION}.run --output /tmp/build/nvidia.run
+    curl https://us.download.nvidia.com/XFree86/Linux-${ARCH}/${NVIDIA_VERSION}/NVIDIA-Linux-${ARCH}-${NVIDIA_VERSION}.run --output /tmp/build/nvidia-drivers/nvidia.run
 fi
 cd /tmp/build/nvidia-drivers/
 chmod +x ./nvidia.run
 bash /tmp/build/nvidia-drivers/nvidia.run --no-kernel-module --no-kernel-module-source --run-nvidia-xconfig --no-backup --no-questions --accept-license --ui=none
 
 
-# cd /tmp/build/
-# sudo -u $HOSTUSER mkdir -p /tmp/build/davinci-resolve-studio/
-# if [ ! -f /tmp/build/davinci-resolve/*zst ]; then
-#     sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve-studio --overwrite '*' --builddir=/tmp/build/
-# else
-#     cd /tmp/build/davinci-resolve-studio/
-#     pacman -U *zst --noconfirm --overwrite '*'
-# fi
-
 cd /tmp/build/
-sudo -u $HOSTUSER mkdir -p /tmp/build/davinci-resolve/
+sudo -u $HOSTUSER mkdir -p /tmp/build/davinci-resolve-studio/
 if [ ! -f /tmp/build/davinci-resolve/*zst ]; then
-    sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve --overwrite '*' --builddir=/tmp/build/
+    sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve-studio --overwrite '*' --builddir=/tmp/build/
 else
-    cd /tmp/build/davinci-resolve/
+    cd /tmp/build/davinci-resolve-studio/
     sudu -u $HOSTUSER makepkg -sU
     pacman -U *zst --noconfirm --overwrite '*'
 fi
+
+# cd /tmp/build/
+# sudo -u $HOSTUSER mkdir -p /tmp/build/davinci-resolve/
+# if [ ! -f /tmp/build/davinci-resolve/*zst ]; then
+#     sudo -u $HOSTUSER yay --noconfirm -S davinci-resolve --overwrite '*' --builddir=/tmp/build/
+# else
+#     cd /tmp/build/davinci-resolve/
+#     sudu -u $HOSTUSER makepkg -sU
+#     pacman -U *zst --noconfirm --overwrite '*'
+# fi
 
 
 

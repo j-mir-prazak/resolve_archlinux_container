@@ -14,9 +14,11 @@ docker run \
     --mount type=bind,source=/home,target=/home \
     --mount type=bind,source=/opt/resolve,target=/opt/resolve_host \
     --mount type=bind,source=$(pwd)/APP,target=/app,readonly \
-    --mount type=bind,source=/etc/machine-id,target=/etc/machine-id \
     --mount type=bind,source=$(pwd)/resolve,target=/opt/resolve \
     --mount type=bind,source=$(pwd)/build,target=/tmp/build \
+    --mount type=bind,source=$(pwd)/private/machine-id,target=/etc/machine-id \
+    --mount type=bind,source=$(pwd)/private/hostid,target=/etc/hostid \
+    --mount type=bind,source=$(pwd)/private/.license,target=/opt/resolve/.license \
     --env DISPLAY=$DISPLAY \
     --env HOSTUSER=$USER \
     --env HOSTUSERID=$(id -u) \

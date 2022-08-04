@@ -1,5 +1,11 @@
 #!/bin/bash
 
+mkdir -p $(pwd)/private
+mkdir -p $(pwd)/private/.licence
+mkdir -p $(pwd)/build
+mkdir -p $(pwd)/resolve
+mkdir -p $(pwd)/resolve_studio
+
 HOSTUSER=$USER
 HOSTUSERID=$(id -u)
 
