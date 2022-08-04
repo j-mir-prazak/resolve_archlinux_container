@@ -20,6 +20,8 @@ docker run \
     --mount type=bind,source=/tmp,target=/tmp \
     --mount type=bind,source=/var/run/user,target=/var/run/user \
     --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
+    --mount type=bind,source=$(pwd)/build/,target=/tmp/build \
+    --mount type=bind,source=$(pwd)/resolve,target=/opt/resolve \
     --env DISPLAY=$DISPLAY \
     --env ARCH="$(arch)" \
     --env NVIDIA_VERSION="$(nvidia-smi -h | head -n1 | awk '{print $6}' | perl -pE 's/v//g')" \

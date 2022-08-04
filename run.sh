@@ -16,6 +16,7 @@ docker run \
     --mount type=bind,source=$(pwd)/APP,target=/app,readonly \
     --mount type=bind,source=/etc/machine-id,target=/etc/machine-id \
     --mount type=bind,source=$(pwd)/resolve,target=/opt/resolve \
+    --mount type=bind,source=$(pwd)/build,target=/tmp/build \
     --env DISPLAY=$DISPLAY \
     --env HOSTUSER=$USER \
     --env HOSTUSERID=$(id -u) \
@@ -24,4 +25,4 @@ docker run \
     --rm \
     -ti \
 archresolve:latest /app/resolve.sh
-#archresolve:latest sudo -u $USER PULSE_SERVER=/var/run/user/$(id -u)/pulse/native /opt/resolve/bin/resolve
+#archresolve:latest sudo -u $HOSTUSER PULSE_SERVER=/var/run/user/$(id -u)/pulse/native /opt/resolve/bin/resolve

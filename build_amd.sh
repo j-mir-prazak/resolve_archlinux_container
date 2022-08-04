@@ -21,6 +21,7 @@ docker run \
     --mount type=bind,source=/var/run/user,target=/var/run/user \
     --mount type=bind,source=/etc/localtime,target=/etc/localtime,readonly \
     --mount type=bind,source=$(pwd)/build/,target=/tmp/build \
+    --mount type=bind,source=$(pwd)/resolve,target=/opt/resolve \
     --env DISPLAY=$DISPLAY \
     --env ARCH="$(arch)" \
     --env HOSTUSER=$HOSTUSER \

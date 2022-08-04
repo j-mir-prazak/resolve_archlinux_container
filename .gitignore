@@ -2,4 +2,5 @@ build/*
 build/
 resolve/*
 resolve/
-
+resolve_studio/*
+resolve_studio/
